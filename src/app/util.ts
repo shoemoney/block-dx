@@ -64,3 +64,8 @@ export const confirm = message => {
   });
   return res;
 };
+
+export const openExternal = url => {
+  const { ipcRenderer } = window.electron;
+  ipcRenderer.send('openExternal', url);
+};
